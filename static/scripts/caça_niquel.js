@@ -1,4 +1,7 @@
 //script do caça niquel
+
+const { off } = require("node:cluster")
+
 //variáveis globais
 const emojisCacaNiquel = [
   "🎰",
@@ -16,7 +19,7 @@ let aumentarApostaBtn = document.getElementById('aumentar-aposta')
 let diminuirApostaBtn = document.getElementById('diminuir-aposta')
 let girar = document.getElementById('girar')
 let reels = document.querySelectorAll('#Combinações .reel')
-let resultado = document.getElementById('resultado')
+let resultadofront = document.getElementById('resultado')
 let valor_ganho = document.getAnimations('valor-ganho')
 let percas = document.getElementById('valor-perdido')
 
@@ -51,9 +54,28 @@ function girarRoleta(){
     })
 }
 //função pra verificar jogo
+function verificar(resultado){
+    if(resultado.includes('💎') | resultado.includes('🍀')){
+        return valorAposta * 3,'ganho1'
+    }else if(resultado.includes('🎰') | resultado.includes('🎲')){
+        return valorAposta * 2,'ganhou2'
+    }else{
+        return valorAposta --
+    }
+}
 
 
+
+//eventos
 
 girar.addEventListener('click', () => {
-    girarRoleta()
+    let resultado = girarRoleta()
+    if (resultado === 'ganhou1'){
+        valor_ganho.textContent=resultado
+        resultadofront.textContent='Você ganhou!!,seu valor dobrou um 3 vzs'
+    }else if (resultado === 'ganhou2'){
+
+    }else{
+        
+    }
 })
