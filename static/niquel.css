@@ -181,14 +181,32 @@ h1{
 }
 
 .Roleta #Combinações{
-    min-height: 24px;
-    color: #1a1a1a;
-    font-weight: 600;
-    letter-spacing: 0.04em;
+    min-height: 48px;
     padding: 10px 14px;
-    border-radius: 14px;
+    border-radius: 16px;
     background: #f7f3e8;
     border: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+.reel{
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 22px;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.reel.spinning{
+    transform: translateY(-4px);
+    filter: blur(0.6px);
 }
 
 .Roleta #valor-aposta{
