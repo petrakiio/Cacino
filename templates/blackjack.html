@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack - Cacino do Pedro</title>
+    <link rel="stylesheet" href="../static/blackjack.css">
+</head>
+<body>
+    <nav class="topbar" aria-label="Navegacao principal">
+        <div class="brand">Cacino do Pedro</div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../templates/jogos.html">Jogos</a></li>
+            <li><a href="../templates/sobre.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <main class="page">
+        <header class="hero">
+            <p class="eyebrow">Jogo</p>
+            <h1>Blackjack</h1>
+            <p class="subhead">Chegue o mais perto de 21 sem estourar.</p>
+        </header>
+
+        <section class="panel">
+            <h2>Regras Rapidas</h2>
+            <ul>
+                <li>Cartas 2-10 valem o numero.</li>
+                <li>J, Q, K valem 10.</li>
+                <li>As vale 1 ou 11.</li>
+            </ul>
+        </section>
+
+        <section class="panel game-area">
+            <h2>Area do Jogo</h2>
+            <div class="table">
+                <div class="hand">
+                    <p class="label">Dealer</p>
+                    <div class="cards">
+                        <div class="card">?</div>
+                        <div class="card">?</div>
+                    </div>
+                </div>
+                <div class="hand">
+                    <p class="label">Voce</p>
+                    <div class="cards">
+                        <div class="card">A</div>
+                        <div class="card">10</div>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="chip" type="button">Hit</button>
+                    <button class="chip" type="button">Stand</button>
+                    <button class="chip" type="button">Double</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel result">
+            <p class="label">Resultado</p>
+            <div class="result-box">Aguardando jogada...</div>
+        </section>
+    </main>
+</body>
+</html>
