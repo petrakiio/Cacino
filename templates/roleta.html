@@ -73,18 +73,28 @@
                     <div class="control-group bet-row">
                         <div>
                             <p class="label">Valor da aposta</p>
-                            <div class="bet-value">10</div>
+                            <div class="bet-value" id="bet-value">10</div>
                         </div>
                         <div class="bet-buttons">
-                            <button class="chip" data-btn="+" type="button">-</button>
-                            <button class="chip" data-btn="-" type="button">+</button>
+                            <button class="chip" id="bet-dec" type="button">-</button>
+                            <button class="chip" id="bet-inc" type="button">+</button>
                         </div>
                     </div>
                     <button class="spin-btn" type="button">Girar</button>
                 </div>
             </div>
             <div class="result">
-                <p class="label">Resultado:<span id="resultado"></span></p>
+                <div class="stats">
+                    <div>
+                        <p class="label">Saldo</p>
+                        <div class="stat-value" id="saldo">100</div>
+                    </div>
+                    <div>
+                        <p class="label">Lucro/Perda</p>
+                        <div class="stat-value" id="lucro">0</div>
+                    </div>
+                </div>
+                <p class="label">Resultado</p>
                 <div class="result-box">Aguardando giro...</div>
             </div>
         </section>

@@ -6,6 +6,7 @@ const colorButtons = document.querySelectorAll(".chip[data-color]");
 const parityButtons = document.querySelectorAll(".chip[data-parity]");
 const resultadoFront = document.querySelector(".result-box");
 const spinBtn = document.querySelector(".spin-btn");
+const wheel = document.querySelector(".wheel");
 
 let selected = { number: null, color: null, parity: null };
 
@@ -55,6 +56,12 @@ setupToggle(parityButtons, 'parity');
 function girarRoleta() {
     const numeroSorteado = Math.floor(Math.random() * 37);
     const corSorteada = corDoNumero(numeroSorteado);
+
+    if (wheel) {
+        const base = 360 * 4; // voltas completas
+        const ajuste = Math.floor(Math.random() * 360);
+        wheel.style.transform = `rotate(${base + ajuste}deg)`;
+    }
     
     // verifica se o selected bate com o sorteio
     resultadoFront.textContent = `Sorteado: ${numeroSorteado} (${corSorteada})`;

@@ -191,6 +191,7 @@ h1{
         );
     border: 8px solid rgba(255, 255, 255, 0.12);
     box-shadow: var(--shadow);
+    transition: transform 1.8s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .wheel-ring{
@@ -348,6 +349,17 @@ h1{
 .result{
     display: grid;
     gap: 8px;
+}
+
+.stats{
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.stat-value{
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .result-box{
