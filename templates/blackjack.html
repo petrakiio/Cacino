@@ -36,31 +36,34 @@
             <h2>Area do Jogo</h2>
             <div class="table">
                 <div class="hand">
-                    <p class="label">Dealer</p>
-                    <div class="cards">
-                        <div class="card">?</div>
-                        <div class="card">?</div>
+                    <div class="hand-header">
+                        <p class="label">Dealer</p>
+                        <span class="score" id="dealer-score">0</span>
                     </div>
+                    <div class="cards" id="dealer-cards"></div>
                 </div>
                 <div class="hand">
-                    <p class="label">Voce</p>
-                    <div class="cards">
-                        <div class="card">A</div>
-                        <div class="card">10</div>
+                    <div class="hand-header">
+                        <p class="label">Voce</p>
+                        <span class="score" id="player-score">0</span>
                     </div>
+                    <div class="cards" id="player-cards"></div>
                 </div>
                 <div class="actions">
-                    <button class="chip" type="button">Hit</button>
-                    <button class="chip" type="button">Stand</button>
-                    <button class="chip" type="button">Double</button>
+                    <button class="chip" id="hit-btn" type="button">Hit</button>
+                    <button class="chip" id="stand-btn" type="button">Stand</button>
+                    <button class="chip" id="double-btn" type="button">Double</button>
+                    <button class="chip" id="deal-btn" type="button">Nova rodada</button>
                 </div>
             </div>
         </section>
 
         <section class="panel result">
             <p class="label">Resultado</p>
-            <div class="result-box">Aguardando jogada...</div>
+            <div class="result-box" id="bj-result">Aguardando jogada...</div>
         </section>
     </main>
+
+    <script src="../static/scripts/blackjack.js"></script>
 </body>
 </html>
