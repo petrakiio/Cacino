@@ -1,11 +1,9 @@
-//Script ppt(pedra,papel e tesoura)
-
-const { match } = require("node:assert")
+// Script ppt (pedra, papel e tesoura)
 
 //Variaveis
-const btnpedra = document.querySelector('[data-choice=pedra]')
-const btnpapel = document.querySelector('[data-choice=papel]')
-const btntesoura = document.querySelector('[data-choice=tesoura]')
+const btnpedra = document.querySelector('[data-choice="pedra"]')
+const btnpapel = document.querySelector('[data-choice="papel"]')
+const btntesoura = document.querySelector('[data-choice="tesoura"]')
 const playerscore = document.getElementById('player-score')
 const cpuscore = document.getElementById('cpu-score')
 let cpupoint = 0
@@ -34,9 +32,34 @@ function escolhacpu(){
     return escolha
 }
 
-function verificar(escplayer,esccpu){
+function verificar(escplayer, esccpu){
+    if (escplayer === esccpu) return 'empate'
     if(
-        escplayer == 'papel'  && esccpu == 'pedra' |
-        
-    )
+        (escplayer === 'papel' && esccpu === 'pedra') ||
+        (escplayer === 'pedra' && esccpu === 'tesoura') ||
+        (escplayer === 'tesoura' && esccpu === 'papel')
+    ){
+        return 'player'
+    }
+    return 'cpu'
 }
+
+//Eventos
+btnpapel.addEventListener('click', () =>{
+    const escolha = escolhacpu()
+    const result = verificar('papel', escolha)
+    atualizarscore(result)
+    if (resultado) resultado.textContent = result === 'empate' ? 'Empate!' : `Venceu: ${result}`
+})
+btnpedra.addEventListener('click', () =>{
+    const escolha = escolhacpu()
+    const result = verificar('pedra', escolha)
+    atualizarscore(result)
+    if (resultado) resultado.textContent = result === 'empate' ? 'Empate!' : `Venceu: ${result}`
+})
+btntesoura.addEventListener('click',() =>{
+    const escolha = escolhacpu()
+    const result = verificar('tesoura', escolha)
+    atualizarscore(result)
+    if (resultado) resultado.textContent = result === 'empate' ? 'Empate!' : `Venceu: ${result}`
+})
